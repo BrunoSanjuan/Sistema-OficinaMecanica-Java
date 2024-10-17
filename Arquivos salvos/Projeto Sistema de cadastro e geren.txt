@@ -1,0 +1,88 @@
+DOCUMENTO DE LEVANTAMENTO DE REQUISITOS
+
+
+Projeto: Sistema de Cadastro e Gerenciamento de Serviços Auto-Mecânica
+
+1. Visão Geral
+O sistema tem como objetivo permitir o cadastro, gerenciamento e impressão de ordens de serviço para uma oficina mecânica, proporcionando uma interface simples e intuitiva para usuários com pouca familiaridade com sistemas computacionais. O sistema será desenvolvido em Java, com persistência de dados em arquivos de texto e funcionalidades que permitam o cadastro, edição e impressão de informações dos clientes e serviços prestados.
+
+2. Requisitos Funcionais
+
+2.1 Cadastro de Clientes
+O sistema permitirá o cadastro de clientes com as seguintes informações:
+Nome completo
+CPF
+Tipo de veículo (ex: carro, moto)
+Serviço contratado
+Peças para troca e seus respectivos valores
+Andamento do serviço (status)
+Data de início do serviço
+Prazo para término do serviço
+Orçamento do serviço
+
+2.2 Gerenciamento de Serviços
+O sistema deve possibilitar a edição das informações cadastradas, incluindo:
+Atualização do andamento do serviço
+Alteração no orçamento, prazos, ou peças incluídas
+Correção de dados de cliente e serviço
+
+2.3 Salvar e Editar Informações
+O sistema deve permitir salvar as informações em um arquivo de texto simples, com possibilidade de edição posterior. Cada atualização de cadastro será salva nesse arquivo, mantendo consistência dos dados.
+
+2.4 Impressão de Dados
+Será disponibilizada uma funcionalidade para imprimir os dados cadastrados:
+Ordem de serviço completa para o cliente, incluindo todos os detalhes do serviço contratado, orçamento e prazos.
+Relatório detalhado com informações do cliente e serviço prestado para controle da oficina.
+
+3. Requisitos Não Funcionais
+
+3.1 Usabilidade
+O sistema deve ter uma interface simples, com botões claros e campos de fácil compreensão, adequados para usuários com pouca familiaridade com tecnologia.
+Mensagens de erro e validação devem ser apresentadas de forma objetiva e de fácil entendimento.
+
+3.2 Desempenho
+O tempo de resposta do sistema ao salvar, carregar e editar informações deve ser curto, mesmo em um ambiente com muitos dados.
+
+3.3 Portabilidade
+O sistema deve ser executável em diferentes sistemas operacionais (Windows, Linux, etc.) sem necessidade de modificações significativas.
+
+3.4 Segurança
+Embora os dados sejam salvos em arquivos de texto, é necessário implementar medidas para proteger dados sensíveis como CPF. A criptografia dessas informações será considerada no desenvolvimento.
+
+4. Requisitos Técnicos
+
+4.1 Linguagem de Programação
+O sistema será desenvolvido em Java, utilizando bibliotecas padrão como Swing (para a interface gráfica) e classes de I/O para salvar e manipular arquivos de texto.
+
+4.2 Persistência de Dados
+As informações do sistema serão armazenadas em arquivos de texto (.txt), possibilitando fácil leitura e edição. Os dados seguirão um formato estruturado para facilitar a leitura por humanos e o processamento pelo sistema.
+
+4.3 Interface Gráfica
+A interface será desenvolvida utilizando Swing para oferecer uma experiência simples e intuitiva ao usuário.
+Componentes principais: janelas para cadastro de clientes, visualização de ordens de serviço e botões de ação (salvar, editar, imprimir).
+
+5. Requisitos de Relatório
+
+5.1 Relatório de Ordens de Serviço
+O sistema permitirá a geração de relatórios detalhados de cada ordem de serviço, que incluirão todas as informações do serviço contratado e valores para entrega ao cliente.
+
+5.2 Filtro de Buscas
+O sistema permitirá buscar ordens de serviço e clientes por parâmetros como nome, CPF, ou status do serviço, facilitando o gerenciamento.
+
+6. Restrições
+O sistema será offline, ou seja, não requererá conexão à internet para o funcionamento básico.
+Não haverá integração com sistemas externos (como ERPs ou bancos de dados online) na primeira versão.
+
+7. Conclusão
+Este levantamento de requisitos fornece uma visão abrangente das funcionalidades esperadas e dos critérios técnicos e não técnicos para o desenvolvimento do sistema. Esses requisitos podem ser expandidos ao longo do desenvolvimento, conforme as necessidades evoluam.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ESTRUTURA DO PROJETO
+
+Main.java - Arquivo principal para executar o sistema.
+
+Cliente.java - Classe que armazena os dados do cliente.
+
+OficinaMecanicaUI.java - Interface gráfica para o usuário.
+
+GerenciadorArquivo.java - Classe para salvar e carregar dados de arquivos de texto.
